@@ -1,0 +1,28 @@
+
+project bionic/
+diff --git a/libc/kernel/common/linux/fb.h b/libc/kernel/common/linux/fb.h
+index 451301c..ff53102 100644
+--- a/libc/kernel/common/linux/fb.h
++++ b/libc/kernel/common/linux/fb.h
+@@ -285,6 +285,7 @@ struct fb_var_screeninfo {
+  __u32 sync;
+  __u32 vmode;
+  __u32 rotate;
++ __u32 colorspace;
+ /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  __u32 reserved[5];
+ };
+
+project external/kernel-headers/
+diff --git a/original/linux/fb.h b/original/linux/fb.h
+index 5e51864..47912d1 100644
+--- a/original/linux/fb.h
++++ b/original/linux/fb.h
+@@ -279,6 +279,7 @@ struct fb_var_screeninfo {
+ 	__u32 sync;			/* see FB_SYNC_*		*/
+ 	__u32 vmode;			/* see FB_VMODE_*		*/
+ 	__u32 rotate;			/* angle we rotate counter clockwise */
++	__u32 colorspace;		/* colorspace for FOURCC-based modes */
+ 	__u32 reserved[5];		/* Reserved for future compatibility */
+ };
+ 
